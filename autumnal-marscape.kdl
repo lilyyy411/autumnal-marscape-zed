@@ -1,0 +1,580 @@
+/*
+    Autumnal Marscape v0.1.0
+    By Lilyyy411
+    Made using [zeddy](https://github.com/lilyyy411/zeddy)
+
+    This theme is a showcase of the new tool `zeddy`. The theme is built around the
+    idea of basing everything on transformations on a single base color, preserving
+    at least one property (luminance, chroma, or hue) of the base color whenever possible.
+    This allows me to reap the benefits of LCH's perceptual uniformity
+    while barely having to think about whether the colors actually work.
+*/
+meta {
+    name "Autumnal Marscape"
+    author "Lilyyy411"
+}
+
+palette {
+    // The one and only holy salmon
+    salmon "#DF8F77" saturate=0.1
+
+    // background/selected
+    midnight-background "salmon" desaturate=0.80 darken=0.875 hue-shift=-30.0
+    midnight-selected "midnight-background" saturate=0.1 lighten=0.2
+    dust-background "salmon" desaturate=0.60 darken=0.6520
+    dust-selected "dust-background" saturate=0.1 lighten=0.2
+
+    // success/warn/error
+    success-bg "salmon" hue-shift=70.0
+    success "success-bg" desaturate=0.2 lighten=0.4
+    success-border "success-bg" darken=0.2
+    warn-bg "salmon" hue-shift=30.0
+    warn "warn-bg" desaturate=0.2 lighten=0.4
+    warn-border "warn-bg" darken=0.2
+    error-bg "salmon" hue-shift=-10.0 saturate=0.3
+    error "error-bg" lighten=0.4
+    error-border "error-bg" darken=0.2
+
+    // text
+    base-text "salmon" desaturate=0.5 lighten=0.90
+    accented "salmon" hue-shift=-25.0 desaturate=0.4 lighten=0.4
+    keyword "salmon" hue-shift=-95.0 desaturate=0.5
+    type "salmon" hue-shift=25.0 saturate=0.1
+    function "salmon" saturate=0.1
+    number "salmon" hue-shift=70.0 desaturate=0.4 lighten=0.2
+    punctuation "salmon" lighten=0.15 desaturate=0.55
+    hint "salmon" darken=0.4 desaturate=0.5
+    disabled "salmon" darken=0.25 desaturate=0.8
+    muted "salmon" hue-shift=-25.0 desaturate=0.4
+
+    // strings and comments
+    string "salmon" hue-shift=-25.0
+    string-escape "doc-comment" saturate=0.1
+    special-string "salmon" hue-shift=-125.0
+    comment "muted"
+    doc-comment "salmon" darken=0.2 desaturate=0.50
+
+    // collaboration
+    player-1 "accented" darken=0.4
+    player-2 "number"
+}
+
+common {
+    name "common"
+    appearance "dark"
+    modifier {
+        color "#000000" alpha=0.0
+        apply {
+            style "ghost_element.background"
+            style "scrollbar.track.background"
+            style "border.transparent"
+        }
+    }
+    modifier {
+        color "success-bg"
+        apply {
+            style "success.background"
+            style "created.background"
+            style "predictive.background"
+        }
+    }
+    modifier {
+        color "base-text"
+        apply {
+            syntax "embedded"
+            style "text"
+            syntax "preproc"
+            syntax "variable"
+            style "terminal.foreground"
+            style "icon"
+            style "terminal.bright_foreground"
+            syntax "primary"
+            style "editor.active_line_number"
+            style "terminal.ansi.dim_black"
+            style "terminal.ansi.bright_white"
+            style "editor.foreground"
+            style "terminal.ansi.white"
+        }
+    }
+    modifier {
+        color "accented"
+        apply {
+            syntax "variant"
+            style "link_text.hover"
+            style "icon.accent"
+            style "info"
+            syntax "emphasis.strong"
+            style "text.accent"
+            syntax "emphasis"
+            syntax "attribute"
+            syntax "property"
+            syntax "label"
+            style "renamed"
+            syntax "constructor"
+        }
+    }
+    modifier {
+        color "accented" alpha=0.101960786
+        apply {
+            style "editor.document_highlight.read_background"
+        }
+    }
+    modifier {
+        color "salmon" alpha=0.101960786
+        apply {
+            style "editor.active_wrap_guide"
+        }
+    }
+    modifier {
+        color "salmon" alpha=0.050980393
+        apply {
+            style "editor.wrap_guide"
+        }
+    }
+    modifier {
+        color "base-text" alpha=0.34901962
+        apply {
+            style "editor.line_number"
+        }
+    }
+    modifier {
+        color "salmon" alpha=0.29803923
+        apply {
+            style "scrollbar.thumb.background"
+        }
+    }
+    modifier {
+        color "error"
+        apply {
+            style "terminal.ansi.red"
+            style "deleted"
+            style "error"
+        }
+    }
+    modifier {
+        color "success-border"
+        apply {
+            style "created.border"
+            style "predictive.border"
+            style "success.border"
+        }
+    }
+    modifier {
+        font-style "italic"
+        apply {
+            syntax "predictive"
+        }
+    }
+    modifier {
+        font-style "normal"
+        apply {
+            syntax "link_text"
+        }
+    }
+    modifier {
+        font-weight 700
+        apply {
+            syntax "hint"
+            syntax "emphasis.strong"
+            syntax "title"
+        }
+    }
+    modifier {
+        color "type" lighten=0.1
+        apply {
+            syntax "type.builtin"
+            syntax "tag"
+            syntax "type"
+            syntax "link_text"
+        }
+    }
+    modifier {
+        color "punctuation"
+        apply {
+            syntax "punctuation"
+        }
+    }
+    modifier {
+        color "warn"
+        apply {
+            style "warning"
+            style "modified"
+            style "conflict"
+            style "terminal.ansi.yellow"
+        }
+    }
+    modifier {
+        color "string"
+        apply {
+            syntax "string"
+            syntax "title"
+        }
+    }
+    modifier {
+        color "number"
+        apply {
+            syntax "constant"
+            syntax "number"
+        }
+    }
+    modifier {
+        color "success"
+        apply {
+            style "terminal.ansi.green"
+            style "success"
+            style "created"
+        }
+    }
+    modifier {
+        color "muted"
+        font-style "italic"
+        apply {
+            syntax "comment" // yeah I like this
+            style "terminal.ansi.bright_black" // does not apply italic to the terminal
+            // because it can't
+        }
+    }
+    modifier {
+        color "warn-border"
+        apply {
+            style "conflict.border"
+            style "modified.border"
+            style "warning.border"
+        }
+    }
+    modifier {
+        color "warn-bg" lighten=0.1
+        apply {
+            style "conflict.background"
+            style "modified.background"
+            style "warning.background"
+        }
+    }
+    modifier {
+        color "error-bg"
+        apply {
+            style "error.background"
+            style "deleted.background"
+        }
+    }
+    modifier {
+        color "error-border"
+        apply {
+            style "deleted.border"
+            style "error.border"
+        }
+    }
+    modifier {
+        color "special-string"
+        apply {
+            syntax "string.special"
+            syntax "string.regex"
+            syntax "string.special.symbol"
+            syntax "enum"
+            syntax "text.literal"
+        }
+    }
+
+    modifier {
+        color "keyword"
+        apply {
+            syntax "operator"
+            syntax "keyword"
+        }
+    }
+    modifier {
+        color "punctuation"
+        apply {
+            syntax "punctuation.bracket"
+            syntax "punctuation.list_marker"
+            syntax "punctuation.special"
+            syntax "punctuation.delimiter"
+        }
+    }
+    modifier {
+        color "hint" lighten=0.1
+
+        apply {
+            style "hint"
+            syntax "hint"
+        }
+    }
+
+    modifier {
+        color "disabled"
+        apply {
+            style "icon.disabled"
+            style "text.placeholder"
+            style "hidden"
+            style "text.disabled"
+            style "ignored"
+        }
+    }
+    modifier {
+        color "muted"
+        apply {
+            style "unreachable"
+            style "text.muted"
+            style "icon.placeholder"
+            style "icon.muted"
+        }
+    }
+    modifier {
+        color "muted" darken=0.3
+        apply {
+            style "border.disabled"
+            style "hidden.border"
+        }
+    }
+    modifier {
+        color "keyword"
+        apply {
+            style "predictive"
+            syntax "predictive"
+        }
+    }
+
+    modifier {
+        color "function"
+        apply {
+            syntax "boolean"
+            syntax "function.method"
+            syntax "function"
+            syntax "link_uri"
+        }
+    }
+    modifier {
+        color "doc-comment"
+        apply {
+            syntax "comment.doc"
+        }
+    }
+    modifier {
+        color "string-escape"
+        apply {
+            syntax "string.escape"
+        }
+    }
+    player {
+        cursor "player-1"
+        selection "player-1" alpha=0.23921569
+        background "player-1"
+    }
+    player {
+        cursor "player-2"
+        selection "player-2" alpha=0.23921569
+        background "player-2"
+    }
+}
+
+theme {
+    name "Autumnal Marscape Starlight"
+    appearance "dark"
+    modifier {
+        color "midnight-background" lighten=0.1
+        apply {
+            style "border"
+        }
+    }
+    modifier {
+        color "midnight-background" darken=0.5
+        apply {
+            style "title_bar.inactive_background"
+            style "tab.inactive_background"
+            style "editor.subheader.background"
+            style "elevated_surface.background"
+            style "element.background"
+            style "editor.highlighted_line.background"
+            style "panel.background"
+            style "tab_bar.background"
+            style "surface.background"
+            style "ghost_element.disabled"
+            style "element.disabled"
+        }
+    }
+    modifier {
+        color "midnight-background" darken=0.2
+        apply {
+            style "editor.highlighted_line.background"
+            style "panel.background"
+            style "elevated_surface.background"
+            style "editor.subheader.background"
+            style "surface.background"
+            style "tab_bar.background"
+            style "tab.inactive_background"
+            style "element.background"
+            style "title_bar.inactive_background"
+            style "ghost_element.disabled"
+            style "element.disabled"
+        }
+    }
+    modifier {
+        color "midnight-background" alpha=0.7490196
+        apply {
+            style "editor.active_line.background"
+        }
+    }
+    modifier {
+        color "midnight-background" darken=0.2
+        apply {
+            style "info.background"
+            style "renamed.background"
+            style "hint.background"
+        }
+    }
+    modifier {
+        color "midnight-background"
+        apply {
+            style "info.border"
+            style "border.focused"
+            style "hint.border"
+            style "renamed.border"
+            style "border.selected"
+            style "editor.invisible"
+        }
+    }
+    modifier {
+        color "midnight-background" lighten=0.1
+        apply {
+            style "scrollbar.track.border"
+        }
+    }
+    modifier {
+        color "midnight-background" lighten=0.1
+        apply {
+            style "title_bar.background"
+            style "status_bar.background"
+        }
+    }
+    modifier {
+        color "midnight-background" darken=0.4
+        apply {
+            style "tab.active_background"
+            style "editor.background"
+            style "toolbar.background"
+            style "editor.gutter.background"
+            style "terminal.dim_foreground"
+            style "terminal.background"
+            style "terminal.ansi.black"
+        }
+    }
+    modifier {
+        color "midnight-background" lighten=0.2
+        apply {
+            style "ghost_element.hover"
+            style "element.hover"
+            style "border.variant"
+            style "scrollbar.thumb.hover_background"
+            style "scrollbar.thumb.border"
+        }
+    }
+    modifier {
+        color "midnight-selected"
+        apply {
+            style "element.selected"
+            style "ghost_element.active"
+            style "ghost_element.selected"
+            style "element.active"
+        }
+    }
+}
+
+theme {
+    name "Autumnal Marscape Dust Storm"
+    appearance "dark"
+    modifier {
+        color "dust-background" darken=0.4
+        apply {
+            style "border"
+        }
+    }
+
+    modifier {
+        color "dust-background" darken=0.5
+        apply {
+            style "title_bar.inactive_background"
+            style "tab.inactive_background"
+            style "editor.subheader.background"
+            style "elevated_surface.background"
+            style "element.background"
+            style "editor.highlighted_line.background"
+            style "panel.background"
+            style "tab_bar.background"
+            style "surface.background"
+            style "ghost_element.disabled"
+            style "element.disabled"
+        }
+    }
+    modifier {
+        color "dust-background" darken=0.2
+        apply {
+            style "editor.highlighted_line.background"
+            style "panel.background"
+            style "elevated_surface.background"
+            style "editor.subheader.background"
+            style "surface.background"
+            style "tab_bar.background"
+            style "tab.inactive_background"
+            style "element.background"
+            style "title_bar.inactive_background"
+            style "ghost_element.disabled"
+            style "element.disabled"
+            style "info.background"
+            style "renamed.background"
+            style "hint.background"
+            style "tab.active_background"
+            style "editor.background"
+            style "toolbar.background"
+            style "editor.gutter.background"
+            style "terminal.dim_foreground"
+            style "terminal.background"
+            style "terminal.ansi.black"
+        }
+    }
+
+    modifier {
+        color "dust-background" alpha=0.7490196
+        apply {
+            style "editor.active_line.background"
+        }
+    }
+    modifier {
+        color "dust-background"
+        apply {
+            style "info.border"
+            style "border.focused"
+            style "hint.border"
+            style "renamed.border"
+            style "border.selected"
+            style "editor.invisible"
+        }
+    }
+    modifier {
+        color "dust-background" lighten=0.1
+        apply {
+            style "scrollbar.track.border"
+            style "title_bar.background"
+            style "status_bar.background"
+        }
+    }
+
+    modifier {
+        color "dust-background" lighten=0.2
+        apply {
+            style "ghost_element.hover"
+            style "element.hover"
+            style "border.variant"
+            style "scrollbar.thumb.hover_background"
+            style "scrollbar.thumb.border"
+        }
+    }
+    modifier {
+        color "dust-selected"
+        apply {
+            style "element.selected"
+            style "ghost_element.active"
+            style "ghost_element.selected"
+            style "element.active"
+        }
+    }
+}
