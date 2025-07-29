@@ -1,4 +1,4 @@
-# Autumnal Marscape: A pink and orange theme for Zed
+# Autumnal Marscape: A pink, red and orange theme for Zed
 Feel immersed in the Martian landscape with this festive red, pink and orange dark set of Zed themes.
 
 Available variants: \[Starlight, Dust Storm\]
